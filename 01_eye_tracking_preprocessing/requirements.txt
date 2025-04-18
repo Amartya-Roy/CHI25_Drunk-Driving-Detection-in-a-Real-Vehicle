@@ -1,0 +1,32 @@
+#####################################################################
+# Copyright (C) 2025 ETH Zürich (ethz.ch)
+# Chair of Information Management (im.ethz.ch; github.com/im-ethz)
+# Bosch Lab at University of St. Gallen and ETH Zürich (iot-lab.ch)
+#
+# Authors: Robin Deuber, Kevin Koch, Patrick Langer, Martin Maritsch
+#
+# Licensed under the MIT License (the "License");
+# you may only use this file in compliance with the License.
+# You may obtain a copy of the License at
+#
+#         https://mit-license.org/
+#
+# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#####################################################################
+
+joblib==1.4.0
+jupyterlab==4.0.11
+matplotlib==3.8.4
+numpy==1.26.4
+pandas==2.2.1
+pyarrow==14.0.2
+scikit-learn==1.4.2
+scipy==1.12.0
+statsmodels==0.14.0

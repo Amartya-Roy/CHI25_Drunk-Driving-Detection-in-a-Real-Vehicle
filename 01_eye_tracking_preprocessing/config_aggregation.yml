@@ -1,0 +1,82 @@
+#####################################################################
+# Copyright (C) 2025 ETH Zürich (ethz.ch)
+# Chair of Information Management (im.ethz.ch; github.com/im-ethz)
+# Bosch Lab at University of St. Gallen and ETH Zürich (iot-lab.ch)
+#
+# Authors: Robin Deuber, Kevin Koch, Patrick Langer, Martin Maritsch
+#
+# Licensed under the MIT License (the "License");
+# you may only use this file in compliance with the License.
+# You may obtain a copy of the License at
+#
+#         https://mit-license.org/
+#
+# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#####################################################################
+
+# Define which probands should be considered
+probands_selected: ['201', '202', '203', '205', '207', '208', '209', '211', '212', '213',
+                    '214', '215', '217', '218', '219', '220', '221', '223', '224', '227',
+                    '228', '229', '230', '232', '233', '234', '235', '236', '237', '238',
+                    '239', '240', '241', '242', '243', '244', '245', '247', '249', '250',
+                    '254', '256', '257', '258', '259', '260', '262', '264', '265', '266',
+                    '267', '268', '270', '273']
+
+# Define directories
+data_directory_processed: '/test_track_processed'
+
+# Define if parallel processing should be activated.
+# Note: Even if False, each participant is processed using multiple cores:
+# There is parallelization within one participant, but not between participants.
+# In most cases, setting multi_cores to False is faster because more cores are
+# available to each participant, thereby reducing the processing time per participant.
+multi_cores: False
+
+# Define whether existing files should be recalculated
+enforce_recalculation: True
+
+# Define the window widths in seconds for which the aggregation should be done
+aggregation_sizes: [60]
+
+# Define the step size of the sliding window in seconds
+step_size: 1
+
+# Define the phases of the data that should be used for the aggregation
+selected_phases: [1, 2, 3]
+
+# Define the scenarios of the data that should be used for the aggregation
+selected_scenarios: ['highway', 'rural', 'city']
+
+# Specify the intended framerate that was used to record the data
+framerate: 50
+
+# Define which features should be used for the aggregation
+numerical_features: ['head+roll+velocity', 'head+pitch+velocity',
+                     'head+yaw+velocity', 'head+head+velocity',
+                     'head+mideye_origin+velocity', 'head+mideye_origin_x+velocity',
+                     'head+mideye_origin_y+velocity', 'head+mideye_origin_z+velocity',
+                     'head+roll+acceleration', 'head+pitch+acceleration',
+                     'head+yaw+acceleration', 'head+head+acceleration',
+                     'head+mideye_origin+acceleration', 'head+mideye_origin_x+acceleration',
+                     'head+mideye_origin_y+acceleration', 'head+mideye_origin_z+acceleration',
+                     'gaze+azimuth+pose', 'gaze+elevation+pose', 'gaze+direction+velocity',
+                     'gaze+gaze+velocity', 'gaze+azimuth+velocity',
+                     'gaze+elevation+velocity', 'gaze+gaze+acceleration',
+                     'gaze+azimuth+acceleration', 'gaze+elevation+acceleration']
+
+binary_features: ['eye+right_eye_state+', 'eye+left_eye_state+',
+                  'aoi+driver_side_windscreen+', 'aoi+copilot_side_windscreen+',
+                  'aoi+left_rear_mirror+', 'aoi+right_rear_mirror+',
+                  'aoi+left_window+', 'aoi+right_window+',
+                  'aoi+central_rear_mirror+', 'aoi+driver_instruments+',
+                  'aoi+navigation_display+', 'aoi+middle_instrument_cluster+',
+                  'event+FIXA+onehot', 'event+SACC+onehot']
+
+single_eye_movement_features: ['event+FIXA+onehot', 'event+SACC+onehot']

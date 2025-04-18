@@ -1,0 +1,57 @@
+#####################################################################
+# Copyright (C) 2025 ETH Zürich (ethz.ch)
+# Chair of Information Management (im.ethz.ch; github.com/im-ethz)
+# Bosch Lab at University of St. Gallen and ETH Zürich (iot-lab.ch)
+#
+# Authors: Robin Deuber, Kevin Koch, Patrick Langer, Martin Maritsch
+#
+# Licensed under the MIT License (the "License");
+# you may only use this file in compliance with the License.
+# You may obtain a copy of the License at
+#
+#         https://mit-license.org/
+#
+# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#####################################################################
+
+# Define which probands should be considered
+probands_selected: ['201', '202', '203', '205', '207', '208', '209', '211', '212', '213',
+                    '214', '215', '217', '218', '219', '220', '221', '223', '224', '227',
+                    '228', '229', '230', '232', '233', '234', '235', '236', '237', '238',
+                    '239', '240', '241', '242', '243', '244', '245', '247', '249', '250',
+                    '254', '256', '257', '258', '259', '260', '262', '264', '265', '266',
+                    '267', '268', '270', '273']
+
+# Define whether probands should be run in parallel or not (for performance True)
+run_probands_in_parallel: True
+
+# Define directories
+raw_input_directory: '/test_track'
+preprocessed_output_directory: '/test_track_processed'
+
+# Define the phases and scenarios to be processed for each proband
+selected_phases: [1, 2, 3]
+selected_scenarios: ['highway', 'rural', 'city']
+
+# Defines the minimum confidence for samples to be preprocessed (others will be dropped)
+confidence: 0.01
+
+# Input arguments for the REMODNAV eye movement algorithm
+remodnav_args: ['remodnav/remodnav/remodnav.py',
+                '../../Data/figures/eye_movement/proband_',
+                '1',
+                '50',
+                'deg',
+                'False',
+                '--savgol-length', '0.1',
+                '--median-filter-length', '0.06',
+                '--velthresh-startvelocity', '1000',
+                '--pursuit-velthresh', '15']
+
