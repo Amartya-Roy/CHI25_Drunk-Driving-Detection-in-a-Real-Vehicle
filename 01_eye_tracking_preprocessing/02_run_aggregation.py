@@ -11,7 +11,7 @@
 #
 #         https://mit-license.org/
 #
-# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 # OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 # NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
@@ -23,5 +23,5 @@
 
 from AggregationPipeline import AggregationPipeline
 
-ap = AggregationPipeline('config_aggregation.yml')
+ap = AggregationPipeline("config_aggregation.yml")
 ap.run()

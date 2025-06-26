@@ -26,11 +26,10 @@ preprocessed_output_directory: '/test_track_processed/'
 ```
 
 #### Adapting the config_aggregation.yml
-Inside the folder 01_eye_tracking_preprocessing, you can find the [config_aggregation.yml](01_eye_tracking_preprocessing/config_aggregation.yml). It contains some settings, such as the selected probands and the folders for the raw data and processing output. Change the following two lines you require, to load your own data. ***Please note that these should be the same paths as used for the preprocessing!***
+Inside the folder 01_eye_tracking_preprocessing, you can find the [config_aggregation.yml](01_eye_tracking_preprocessing/config_aggregation.yml). It contains the selected probands and the folder for the processed data. Adjust the following line to match your setup. ***Please use the same path that was used for preprocessing!***
 
 ```yaml
-data_directory: '/test_track'
-data_directory_processed: '/test_track_processed/'
+data_directory_processed: '/test_track_processed'
 ```
 
 
@@ -52,7 +51,7 @@ Then, run the processing:
 ```sh
 python 01_run_processing.py
 ```
-Finally, run the aggregation to extract the features from the processed data:
+Finally, run the aggregation to merge the processed files into a single dataset:
 ```sh
 python 02_run_aggregation.py
 ```

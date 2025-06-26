@@ -24,33 +24,9 @@
 import yaml
 
 class AggregationConfig:
-    def __init__(
-        self,
-        data_directory_processed: str,
-        probands_selected: list[int],
-        multi_cores: bool,
-        enforce_recalculation: bool,
-        aggregation_sizes: list[int],
-        step_size: int,
-        selected_phases: list[int],
-        selected_scenarios: list[str],
-        framerate: int,
-        numerical_features: list[str],
-        binary_features: list[str],
-        single_eye_movement_features: list[str],
-    ) -> None:
+    def __init__(self, data_directory_processed: str, probands_selected: list[int]) -> None:
         self.data_directory_processed = data_directory_processed
         self.probands_selected = probands_selected
-        self.multi_cores = multi_cores
-        self.enforce_recalculation = enforce_recalculation
-        self.aggregation_sizes = aggregation_sizes
-        self.step_size = step_size
-        self.selected_phases = selected_phases
-        self.selected_scenarios = selected_scenarios
-        self.framerate = framerate
-        self.numerical_features = numerical_features
-        self.binary_features = binary_features
-        self.single_eye_movement_features = single_eye_movement_features
 
 
 # Load config parameters from yaml file.
@@ -61,14 +37,4 @@ def load_config(filename: str) -> AggregationConfig:
     return AggregationConfig(
         cfg_aggregation["data_directory_processed"],
         cfg_aggregation["probands_selected"],
-        cfg_aggregation["multi_cores"],
-        cfg_aggregation["enforce_recalculation"],
-        cfg_aggregation["aggregation_sizes"],
-        cfg_aggregation["step_size"],
-        cfg_aggregation["selected_phases"],
-        cfg_aggregation["selected_scenarios"],
-        cfg_aggregation["framerate"],
-        cfg_aggregation["numerical_features"],
-        cfg_aggregation["binary_features"],
-        cfg_aggregation["single_eye_movement_features"],
     )
