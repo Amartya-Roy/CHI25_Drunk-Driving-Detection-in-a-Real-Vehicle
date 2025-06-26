@@ -31,3 +31,22 @@ probands_selected: ['201', '202', '203', '205', '207', '208', '209', '211', '212
 
 # Define directories
 data_directory_processed: '/test_track_processed'
+
+# Use multiple cores when aggregating participants
+multi_cores: False
+
+# Recalculate even if merged files already exist
+enforce_recalculation: True
+
+# Phases and scenarios to retain
+selected_phases: [1, 2, 3]
+selected_scenarios: ['highway', 'rural', 'city']
+
+# Binary features required for interpolation
+binary_features: ['eye+right_eye_state+', 'eye+left_eye_state+',
+                  'aoi+driver_side_windscreen+', 'aoi+copilot_side_windscreen+',
+                  'aoi+left_rear_mirror+', 'aoi+right_rear_mirror+',
+                  'aoi+left_window+', 'aoi+right_window+',
+                  'aoi+central_rear_mirror+', 'aoi+driver_instruments+',
+                  'aoi+navigation_display+', 'aoi+middle_instrument_cluster+',
+                  'event+FIXA+onehot', 'event+SACC+onehot']

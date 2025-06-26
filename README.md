@@ -26,7 +26,7 @@ preprocessed_output_directory: '/test_track_processed/'
 ```
 
 #### Adapting the config_aggregation.yml
-Inside the folder 01_eye_tracking_preprocessing, you can find the [config_aggregation.yml](01_eye_tracking_preprocessing/config_aggregation.yml). It contains the selected probands and the folder for the processed data. Adjust the following line to match your setup. ***Please use the same path that was used for preprocessing!***
+Inside the folder 01_eye_tracking_preprocessing, you can find the [config_aggregation.yml](01_eye_tracking_preprocessing/config_aggregation.yml). It contains the selected probands, directories and some settings for the merge step. Adjust the path and any other options as needed. ***Please use the same path that was used for preprocessing!***
 
 ```yaml
 data_directory_processed: '/test_track_processed'
